@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hide">
+            <h1>Hide</h1>
+            <button id="hideButton">Hide</button>
+            <p>Click here to hide this text</p>
+        </div>
+        <div class="fadein">
+            <h1>Fade In</h1>
+            <button id="fadeinButton">Fade In</button>
+            <p>Click here to fade in the text below</p>
+            <p class="hidden">Hidden Text</p>
+        </div>
+        <div class="html">
+            <h1>HTML</h1>
+            <button id='htmlButton'>HTML</button>
+            <p id='htmlText'>Click here to add html below</p>
+        </div>
+    </div>
+
+    <script>
+        $( "#hideButton" ).click(function() {
+            $( ".hide h1" ).hide( "slow" );
+        });
+
+        $( "#fadeinButton" ).click(function() {
+            $( ".hidden" ).first().fadeIn( "slow" );
+        });
+
+        $( "#htmlButton" ).click(function() {
+            var htmlString = $( this ).html();
+            $( "#htmlText" ).text( htmlString );
+        });
+
+
+        
+    </script>
+    
+</body>
+</html>

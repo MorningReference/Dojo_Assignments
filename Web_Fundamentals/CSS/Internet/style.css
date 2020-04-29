@@ -1,0 +1,191 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+span{
+    color: #0097AE;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 970px;
+}
+
+.header h1, .header h2{
+    font-weight: normal;
+}
+.header h1{
+    font-size: 50px;
+    color: #474747;
+}
+.header span{
+    color: #22659E;
+}
+.header img, 
+.header h1,
+.dns-button,
+.contact-info{
+    display: inline-block;
+}
+.main-content, .big-three-container{
+    display: flex;
+    justify-content: space-between;
+}
+.header img{
+    width: 100px;
+    vertical-align: bottom;
+}
+
+.header h2{
+    color: white;
+    background-color: #3E77A6;
+    background-image: radial-gradient(#5283AD, #26679F);
+    padding: 10px;
+    font-size: 36px;
+}
+
+.sidebar{
+    width: 200px;
+    vertical-align: top;
+    margin-left: 5px;
+}
+.sidebar-content{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid grey 1px;
+}
+.sidebar-content p{
+    font-weight: 800;
+    margin-bottom: 10px;
+    font-size: small;
+}
+.sidebar-link-container{
+    text-align: center;
+}
+
+.sidebar-content a{
+    color: white;
+    display: block;
+    font-weight: normal;
+    box-shadow: 2px 2px grey;
+}
+#more-resources-button{
+    margin-top: -5px;
+}
+.red-text{
+    color: red;
+}
+.blue-text{
+    color: #4F83AF;
+}
+#watch-vid, 
+#more-resources, 
+.sidebar-ad h3, 
+.sidebar-ad a{
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+
+}
+#watch-vid{
+    background-image: linear-gradient(#6197C2, #2A6BA3);
+}
+#more-resources{
+    background-color: #EF7400;
+    background-image: linear-gradient(#EAAE57, #EF7C00);
+}
+.sidebar-ad{
+    text-align: center;
+    background-image: url("./images/ad_background.png");
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+
+.sidebar-ad h3{
+    padding: 0px 10px;
+}
+
+.sidebar-ad img{
+    width: 50%;
+    margin-bottom: 15px;
+
+}
+.sidebar-ad a{
+    background-color: #00C2DF;
+    background-image: linear-gradient(#70CFDF, #00C1DF);
+    text-decoration: none;
+    box-shadow: 1px, 1px, #102A43;
+}
+.main-content{
+    background-image: linear-gradient(#E3E3E3 0%, white 25%);
+}
+.dns-button{
+    margin-top: 10px;
+}
+.dns-button img{
+    width: 20px;
+}
+.contact-info img{
+    width: 40px;
+}
+.main-right-content{
+    width: 700px;
+}
+.content-heading{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid grey 2px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+.contact-info-details{
+    display: inline-block;
+}
+.contact-info-details p{
+    font-size: x-small;
+}
+.contact-info-details h2{
+    color: #00C0DF;
+}
+
+.main-right-content h4{
+    color: #22659E;
+    font-weight: 800;
+}
+
+.client-container h4,
+.client-container p,
+.client-container li,
+.client-image-container,
+.big-three-content h4{
+    margin-bottom: 10px;
+}
+.client-container li, .what-happens-container li{
+    margin-left: 40px;
+}
+.bold{
+    color: black;
+    font-weight: bold;
+}
+.client-image-container{
+    text-align: center;
+}
+.client-container img{
+    width: 250px;
+}
+.what-happens-container{
+    margin-bottom: 20px;
+}
+.big-three-container{
+    border: 5px solid #0085E0;
+    padding: 10px;
+    box-shadow: 1px 1px grey;
+}
+.big-three-container img{
+    width: 120px;
+    display: inline-block;
+    margin-right: 15px;
+}

@@ -1,0 +1,124 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* border: solid black 1px; */
+
+}
+.container{
+    width: 970px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    padding: 10px;
+    background-color: #F7F7F7;
+}
+
+.main-content{
+    padding: 25px;
+    background-color: #4F3C44;
+}
+
+.header h1, .header h3{
+    display: inline-block;
+}
+.header h1{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+
+}
+.header h3{
+    margin-left: 400px;
+}
+
+.top-content, .lower-main-content, .technologies-container{
+    display: flex;
+    justify-content: space-between;
+}
+.top-content{
+    margin-bottom: 30px;
+}
+.top-content img{
+    width: 400px;
+    max-height: 260px;
+    border: solid grey 5px;
+}
+.about{
+    width: 700px;
+    height: 270px;
+    margin-left: 20px;
+    background-color: white;
+}
+.about h3, .lower-content h3{
+    background-color: #A7A6AD;
+    color: white;
+    padding: 10px;
+}
+.about-content{
+    padding: 10px;
+}
+.about-content p{
+    margin-bottom: 10px;
+}
+.about-content a{
+    color: black;
+}
+
+.la-mode, 
+.family-contacts, 
+.fiveEleven, 
+.la-mode-tech,
+.family-contacts-tech,
+.fiveEleven-tech{
+    width: 290px;
+    background-color: white;
+    /* margin-right: 20px; */
+}
+
+.lower-main-content img{
+    width: 100%;
+}
+.la-mode p,
+.family-contacts p,
+.fiveEleven p{
+    padding: 10px;
+}
+
+.tech-image-container{
+    padding: 10px;
+}
+.tech-image-container img{
+    display: inline-block;
+    width: 40px;
+    margin: 0px 5px 5px 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.portfolio-link{
+    text-align: center;
+}
+.technologies-container a{
+    display: inline-block;
+    color: white;
+    background-color: green;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.footer{
+    text-align: center;
+    padding: 10px;
+}
+.footer p{
+    margin-bottom: 15px;
+}
+.footer li{
+    display: inline-block;
+}
+.footer a{
+    color: black;
+}
+.footer img{
+    width: 20px;
+}

@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    border: 1px solid black;
+}
+
+.row div{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.brick{
+    background-color: blue;
+}
+
+.coin{
+    background-image: url('./images/coin.gif');
+    background-position: center;
+    background-size: 100%;
+}

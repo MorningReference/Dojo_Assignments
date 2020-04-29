@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disappearing Ninja</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>jQuery - assignment 1</h1>
+        <div class="row">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+        </div>
+        <div class="row">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+            <img src="https://picsum.photos/200" alt="none">
+        </div>
+        <button>Restore</button>
+    </div>
+    <script>
+        $("img").click(function(){
+            $(this).hide(50);
+        });
+
+        $("button").click(function(){
+            $("img").show(100);
+        });
+    </script>
+</body>
+</html>
+
+
+<img src='img/ninja0.png' data-alt-src='img/cat0.png'/>
+
+$(this).attr('src',$(this).attr('data-alt-src'))
+
+            <img src='./img/ninja0.png' data-alt-src='./img/cat0.png' />
+            <img src='./img/ninja1.png' data-alt-src='img/cat1.png' />
+            <img src='./img/cat2.png' data-alt-src='ninja2.png' />
+            <img src='./img/cat3.png' data-alt-src='img/ninja3.png' />
+            <img src='./img/cat4.png' data-alt-src='img/ninja4.png' />

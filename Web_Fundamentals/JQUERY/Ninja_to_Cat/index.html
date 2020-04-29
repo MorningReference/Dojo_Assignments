@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja To Cat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="img-container">
+            <img src='./img/ninja0.png' data-alt-src='./img/cat0.png' />
+            <img src='./img/ninja1.png' data-alt-src='./img/cat1.png' />
+            <img src='./img/cat2.png' data-alt-src='./img/ninja2.png' />
+            <img src='./img/cat3.png' data-alt-src='./img/ninja3.png' />
+            <img src='./img/cat4.png' data-alt-src='./img/ninja4.png' />
+        </div>
+    </div>
+    <script>
+
+    // $("img").click(function() {
+    //     $("img").toggleClass(function() {
+    //         $(this).attr("src", $(this).attr('data-alt-src'));
+    //     }, function() {
+    //         $(this).attr('data-alt-src',$(this).attr("src"));
+    //     });
+    // });
+    $("img").click(function() {
+            $(this).attr("src", $(this).attr('data-alt-src'));
+    });
+
+
+    </script>
+</body>
+</html>

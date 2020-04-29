@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+.wrapper{
+    width: 900px;
+    margin: auto;
+    /* text-align: center; */
+    padding: 20px;
+}
+
+h1{
+    margin: 12px;
+}
+
+img {
+    width: 200px;
+    border: 1px solid black;
+    margin-right: 10px;
+    
+}
+
+button{
+    height: 25px;
+    width: 75px;
+    display: block;
+    margin: auto;
+}

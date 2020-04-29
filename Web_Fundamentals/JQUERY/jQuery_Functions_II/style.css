@@ -1,0 +1,22 @@
+.wrapper {
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+.hide, .fadein, .html{
+    height: 200px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+h1, button, p{
+    margin: 9px;
+}
+button {
+    height: 25px;
+    width: 75px;
+}
+
+.hidden{
+    display: none;
+}

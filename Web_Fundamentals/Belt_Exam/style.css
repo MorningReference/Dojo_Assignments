@@ -1,0 +1,197 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1, h2, h3{
+    font-weight: normal;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border-style: none;
+}
+.container{
+    width: 1070px;
+    background-color: #062134;
+    font-family: Tahoma, Geneva, sans-serif;
+    padding: 12px;
+}
+
+.header h1,
+.header ul,
+.header li,
+.middle-content a,
+.footer li{
+    display: inline-block;
+}
+.middle-content,
+.lower-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header{
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.header h1{
+    font-size: xx-large;
+    margin-left: 10px;
+}
+.header span{
+    color: #188DD8;
+}
+.header ul{
+    margin-left: 55px;
+}
+.header li{
+    list-style: none;
+    margin-left: 80px;
+}
+.header a{
+    color: white;
+}
+.header a.home-header-link{
+    color: #39729b;
+}
+
+.main-content{
+    background-color: white;
+    padding: 20px;
+    border-bottom: solid black 1px;
+
+}
+
+.main-img{
+    width: 100%;
+}
+
+.middle-content{
+    margin-bottom: 30px;
+    margin-top: 15px;
+
+}
+.middle-content img{
+    width: 40px;    
+    vertical-align: -10px;
+    border-radius: 20px;
+    background-color: white;
+    border: solid #1468A8 1px;
+}
+
+.middle-content h2{
+    display: inline-block;
+    font-size: 28px;
+}
+.services,
+.projects,
+.clients{
+    background-color: #1468A8;
+    color: white;
+    padding: 15px 10px;
+    width: 310px;
+    height: 220px;
+}
+
+.services p,
+.projects p,
+.clients p{
+    font-size: 12px;
+    padding: 10px;
+}
+
+.services button,
+.clients button,
+.projects button{
+    margin-top: 32px;
+    margin-left: 10px;
+}
+
+
+.middle-content button{
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #57b4ee, #57b4ee 50%, #1a93df 50%, #1a93df);
+    color: white;
+    padding: 12px 40px;
+    border-color: #1468A8;
+    font-size: large;
+}
+
+.lower-content h2{
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+.the-world-img-container,
+.the-world-description,
+.testimonial{
+    width: 340px;
+}
+.the-world-img-container img{
+    width: 95%;
+}
+.the-world-description{
+    padding-top: 50px;
+    padding-left: 10px;
+}
+.the-world-description p{
+    font-size: small;
+    margin-bottom: 10px;
+}
+.the-world-description button{
+    color: #6B95B4;
+    border-color: white;
+    background-color: white;
+    margin-top: 20px;
+    font-size: medium;
+}
+
+.testimonial h2, .testimonial p{
+    padding-left: 15px;
+}
+
+.speech-bubble {
+    position: relative;
+	background: #DAEDFF;
+    margin-bottom: 20px;
+    padding: 25px 20px 50px 10px;
+    margin-left: 15px;
+}
+
+.speech-bubble::after {
+    content: '';
+	position: absolute;
+	bottom: 0;
+	left: 14%;
+	width: 10;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #DAEDFF;
+	border-bottom: 0;
+	margin-left: -10px;
+	margin-bottom: -10px;
+}
+.speech-bubble p{
+    font-size: 17px;
+    margin-right: 5px;
+    color: #546C7F;
+    font-style: italic;
+}
+.small-text{
+    font-size: small;
+}
+
+.footer{
+    text-align: center;
+    background-color: #DAEDFF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer a{
+    color: #5e8eb2;
+    margin-right: 20px;
+}
+.footer a.home-footer-link{
+    color: #95c6ec;
+}

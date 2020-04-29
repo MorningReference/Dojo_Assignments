@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: solid 1px black; */
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a{
+        color: black;
+    }
+
+    .header, .upper-content, .lower-content{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+    .container{
+        max-width: 920px;
+    }
+        .header{
+            background-color: #F3F3F3;
+            padding: 10px 30px;
+        }
+        .header h1{
+            font-family: "Comic Sans MS"
+        }
+        .header h3{
+            margin-top: 15px;
+        }
+
+        .main-content{
+            background-image: radial-gradient(#6F5964, #1F0E13);
+            padding: 20px;
+        }
+
+            .upper-content{
+                margin-bottom: 25px;
+            }
+
+                .upper-content img{
+                    height: 250px;
+                    width: 370px;
+                    background-color: #C0C0C0;
+                    padding: 5px;
+                    vertical-align: top;
+                }
+
+                .about-me{
+                    width: 470px;
+                    height: 250px;
+                    background-color: #F1ECF1;
+                    margin-left: 20px;
+                    padding-bottom: 10px;
+                }
+                .about-me h3, .lower-content h3, .lower-content h3{
+                    background-image: radial-gradient(rgb(123, 122, 129), rgb(180, 179, 185));
+                    color: white;
+                    padding: 10px;
+                }
+                .about-me p, .about-me a{
+                    margin: 10px;
+                }
+                .subcontent{
+                    width: 280px;
+                    height: 550px;
+                    background-image: linear-gradient(to left,#C1B1BE, white);
+                }
+                    .subcontent p{
+                        padding: 10px;
+                        font-size: small;
+                        text-align: justify;
+                    }
+
+
+                .website-image{
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+                    .technologies{
+                        display: inline-block;
+                        max-height: 190px;
+                        vertical-align: bottom;
+                    }
+                    .technologies h4{
+                        background-image: radial-gradient(rgb(123, 122, 129), rgb(180, 179, 185));
+                        color: white;
+                        padding: 10px;
+                    }
+                    #technologies-la-mode{
+                        margin-top: 45px;
+                    }
+                    #technologies-family-contacts{
+                        margin-top: 30px;
+                    }
+                    .lang-icon{
+                        height: 40px;
+                        width: 40px;
+                        margin-top: 10px;
+                        margin-left: 10px;
+                    }
+
+                    .content-link{
+                        text-align: center;
+                    }
+                    .subcontent span{
+                        background-color: #407D61;
+                        padding: 5px;
+                        color: white;
+                        border-radius: 10px;
+                        border: 1px solid black;
+                        display: inline-block;
+                        font-size: smaller;
+                        margin-top: 5px;
+                    }
+    .footer p{
+        text-align: center;
+        margin: 10px;
+    }
+    .footer img{
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+    } 
+    .footer ul{
+        display: flex;
+        justify-content: center;
+    }
+    .footer ul li{
+        list-style-type: none;
+        margin-right: 5px;
+    }
+            

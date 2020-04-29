@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="click">
+            <h1>Click</h1>
+            <button id="buttonRed">Click</button>
+            <p>Click the button to make this Div red</p>
+        </div>
+        <div class="slideToggle">
+            <h1>Slide Toggle</h1>
+            <button id="slideButton">Slide Toggle</button>
+            <p>Click the button to Slide Toggle a hidden image</p>
+            <img src="https://picsum.photos/200" class="imageToggle">
+        </div>
+        <div class="append">
+            <h1>Append</h1>
+            <button id="appendButton">Append</button>
+            <p id="appendParagraph">Click the button to Append a new Paragraph</p>
+        </div>
+    </div>
+    <script>
+
+
+        $("#buttonRed").click(function() {
+         $(".click").css("background-color", "red");
+         console.log("it changed to red");
+         });
+          
+
+        $( "#slideButton" ).click(function() {
+            $( "img" ).slideToggle( "slow" );
+        });
+
+
+        $("#appendButton").click(function() {
+            $("#appendParagraph").append( "<p>You just appended this text!</p>" );
+        });
+    </script>
+</body>
+</html> 
