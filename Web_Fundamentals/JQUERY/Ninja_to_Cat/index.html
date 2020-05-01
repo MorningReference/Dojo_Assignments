@@ -11,30 +11,21 @@
 <body>
     <div class="container">
         <div class="img-container">
-            <img src='./img/ninja0.png' data-alt-src='./img/cat0.png' />
-            <img src='./img/ninja1.png' data-alt-src='./img/cat1.png' />
-            <img src='./img/cat2.png' data-alt-src='./img/ninja2.png' />
-            <img src='./img/cat3.png' data-alt-src='./img/ninja3.png' />
-            <img src='./img/cat4.png' data-alt-src='./img/ninja4.png' />
+            <img src='./img/ninja0.png' data-alt-src='./img/cat0.png' temp=''/>
+            <img src='./img/ninja1.png' data-alt-src='./img/cat1.png' temp=''/>
+            <img src='./img/cat2.png' data-alt-src='./img/ninja2.png' temp=''/>
+            <img src='./img/cat3.png' data-alt-src='./img/ninja3.png' temp=''/>
+            <img src='./img/cat4.png' data-alt-src='./img/ninja4.png' temp=''/>
         </div>
     </div>
+
     <script>
-
-    // $("img").click(function() {
-    //     $("img").toggleClass(function() {
-    //         $(this).attr("src", $(this).attr('data-alt-src'));
-    //     }, function() {
-    //         $(this).attr('data-alt-src',$(this).attr("src"));
-    //     });
-    // });
-
     $("img").click(function() {
-            $(this).attr("src", $(this).attr('data-alt-src'));
+        $(this).attr('temp', $(this).attr('src'));
+        $(this).attr('src',$(this).attr("data-alt-src"));
+        $(this).attr('data-alt-src',$(this).attr('temp'));
     });
-
 
     </script>
 </body>
 </html>
-
-//Pushing changes for git

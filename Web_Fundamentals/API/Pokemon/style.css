@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+.left, .right{
+    display: inline-block;
+}
+
+.left{
+    width: 620px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+.right {
+    vertical-align: top;
+    border: 20px solid red;
+    width: 150px;
+    padding: 30px 15px;
+    position: fixed;
+}
+
+.right ul{
+    margin-left: 20px;
+}
+
+li{
+    margin-left: 5px;
+}

@@ -20,22 +20,21 @@ function factorial(num) {
 
 //3. Fibonacci - Create a function to generate Fibonacci numbers.  In this famous mathematical sequence, each number is the sum of the previous two, starting with values 0 and 1.  Your function should accept one argument, an index into the sequence (where 0 corresponds to the initial value, 4 corresponds to the value four later, etc).  Examples: fibonacci(0) = 0 (given), fibonacci(1) = 1 (given), fibonacci(2) = 1 (fib(0)+fib(1), or 0+1), fibonacci(3) = 2 (fib(1) + fib(2)3, or 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 13 (5+8).  Do this without using recursion first.  If you don't know what a recursion is yet, don't worry as we'll be introducing this concept in Part 2 of this assignment.
 function fibonacci(num) {
-    var sum = 0;
-    for(var i = 0; i < num; i++) {
-        for(var j = 0; j < num; j++) {
-            
-        }
+    if(num <= 1){
+        return num;
     }
-}
 
-// function fib(x){
-//     if(x == 1 || x ==0){
-//         return 1;
-//     }
-//     else{
-//         return fib(x-1) + fib(x-2);
-//     }
-// }
+    var fib1 = 0;
+    var fib2 = 1;
+    var fibonacci = 1;
+
+    for (var i = 2; i <= num; i++) {
+        fibonacci = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = fibonacci;
+    }
+    return fibonacci;
+}
 
 //4. Array: Second-to-Last: Return the second-to-last element of an array. Given [42, true, 4, "Liam", 7], return "Liam".  If array is too short, return null.
 function secondToLast(arr) {
@@ -86,4 +85,12 @@ function doubleTrouble(arr) {
         newArr.push(arr[i]);
     }
     return newArr;
+}
+
+//7. Fibonacci with recursion
+function Fib(n) {
+    if(n <= 1) {
+        return n;
+    }
+    return Fib(n - 2) + Fib(n - 1);
 }

@@ -1,0 +1,16 @@
+*{
+    font-family: cursive;
+}
+.title{
+    background-color: #F8E6C5
+}
+.title h6{
+    font-family: cursive;
+}
+.main-content{
+    background-image: url(./img/background.jpg);
+}
+
+.form-group label{
+    font-size: large;
+}
