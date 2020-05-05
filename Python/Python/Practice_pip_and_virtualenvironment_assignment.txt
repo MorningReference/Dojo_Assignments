@@ -1,0 +1,185 @@
+Run the following commands:
+
+pip list
+
+pip list
+Package    Version
+---------- -------
+pip        20.1
+setuptools 41.2.0
+
+Description: Package manager for Python packages/modules.
+A package contains all the files needed for a module.
+You can download and use packages in your virtual environment as well!
+This command lists all the packages you have installed in your environment.
+
+
+deactivate (This will deactivate your virtual environment)
+
+Description: This will deactivate your virtual environment. 
+
+
+pip3 list (How is the result different from when you ran pip list with the virtualenv activated? Hint, you should not have as many things listed when the virtualenv is deactivated. If your results are the same, go back and figure out what went wrong.)
+
+Description: This checks the packages installed for Python version 3 only.
+If you have version 2 installed with packages for that version, then it will not show up when this command is ran.
+
+
+source myEnvironments/py3Env/bin/activate (Adjust the path as needed to re-activate the virtualenv; for windows call myEnvironments/py3Env/Scripts/activate)
+
+Description: This will allow you to go into your virtual environment.
+
+
+pip install Django==2.2.4 (What information do you see returned in terminal after this command?)
+
+(py3Env) pip install Django==2.2.4
+Collecting Django==2.2.4
+  Downloading Django-2.2.4-py3-none-any.whl (7.5 MB)
+     |████████████████████████████████| 7.5 MB 2.2 MB/s
+Collecting pytz
+  Downloading pytz-2020.1-py2.py3-none-any.whl (510 kB)
+     |████████████████████████████████| 510 kB 6.4 MB/s
+Collecting sqlparse
+  Downloading sqlparse-0.3.1-py2.py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB ...
+Installing collected packages: pytz, sqlparse, Django
+Successfully installed Django-2.2.4 pytz-2020.1 sqlparse-0.3.1
+
+Description: Installs this version of Django.
+
+pip freeze (What's the difference between freeze and list?)
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+
+Description: Freezing is a process where pip reads the versions of ALL installed packages in a local virtual environment.
+It then produces a text file with the package fversion for each python package.
+You can also specify a requirements.txt file to install all the dependencies.
+This will create a text file.
+
+
+pip uninstall Django
+
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\aric jeon\desktop\dojo_assignments\python\my_environments\py3env\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\aric jeon\desktop\dojo_assignments\python\my_environments\py3env\lib\site-packages\django\*
+    c:\users\aric jeon\desktop\dojo_assignments\python\my_environments\py3env\scripts\django-admin.exe
+    c:\users\aric jeon\desktop\dojo_assignments\python\my_environments\py3env\scripts\django-admin.py
+Proceed (y/n)? y
+  Successfully uninstalled Django-2.2.4
+
+Description: This will uninstall any version of Django installed.
+
+pip show Django
+
+WARNING: Package(s) not found: Django
+
+Description: Since no Django packages are installed anymore, this is the output we will get.
+
+pip search Flask This one might take a moment to execute.
+
+Flask-SimpleMDE (0.3.0)     - Flask-SimpleMDE - a Flask extension for SimpleMDE
+Flask-Pure (0.5)            - Flask-Pure - a Flask extension for Pure.css
+Flask-OrientDB (0.1)        - A Flask extension for using OrientDB with Flask
+Flask-ElasticUtils (0.1.7)  - ElasticUtils for Flask
+Flask-PubSub (0.1.0)        - Flask-PubSub
+flask-helloworld (1.0.0)    - Flask Helloworld
+flask-zs (0.0.24)           - A helpers for Flask.
+Flask-Quik (0.1.1)          - Quik for Flask
+Flask-Helper (0.19)         - Flask Helper
+Flask-TinyMce (0.1.6)       - flask tinymce
+flask-ws (0.0.1.0)          - Websocket for flask.
+Flask-MDE (1.2.0)           - Pagedown for Flask
+Flask-Intercom (0.1.0)      - Flask-Intercom
+Flask-Waitress (0.0.1)      - Flask Waitress
+Flask-Stripe (0.1.0)        - Flask-Stripe
+sockjs-flask (0.3)          - SockJs for Flask
+Flask-BDEA (0.1.0)          - Flask-BDEA
+Flask-GripControl (0.0.1)   - Flask GripControl
+Flask-SRI (0.1.0)           - Flask-SRI
+Flask-SPF (0.0.0)           - Flask-SPF
+flask-toolbox (0.0.2)       - A flask toolbox.
+Flask-Turbolinks (0.2.0)    - Turbolinks for Flask.
+Flask-FileRev (0.1.0)       - Flask-FileRev
+Flask-TaskTiger (0.0.1)     - Flask TaskTiger
+Flask-Watson (0.1.0)        - Flask-Watson
+Flask-Shopify (0.2)         - Shopify Flask
+Flask-Ext (0.1)             - Extensions of Flask
+Flask-Weixin (0.5.0)        - Weixin for Flask.
+Flask-OAuthlib (0.9.5)      - OAuthlib for Flask
+Flask-Mustache (0.4.1)      - Mustache for Flask
+Fifty-Flask (1.4.0)         - Flask enhancements.
+Flask-NextCaller (0.1.0)    - Flask-NextCaller
+flask-abort (0.0.1)         - flask abort
+flask-ypaginate (0.1.3)     - Pagination for Flask
+Flask-Chargebee (0.0.1)     - Flask-Chargebee
+Flask-Keen (0.1.0)          - Flask-Keen
+Flask-AutoIndex (0.6.6)     - The mod_autoindex for Flask
+Flask-Clearbit (0.1.0)      - Flask-Clearbit
+Flask-FontAwesome (0.1.4)   - FontAwesome for Flask
+Flask-Gears (0.2)           - Gears for Flask
+Flask-GeoIP (0.1.3)         - Flask-GeoIP -------------  Simple Flask extension for pygeoip.
+airbrake-flask (1.0.7)      - airbrake-flask - Airbrake client for Python Flask
+Flask-Diced (0.3)           - Flask-Diced - CRUD views generator for Flask
+flask-myapi (0.1)           - Flask-MyAPI - RESTful support library for Flask
+Flask-RESTive (0.0.3)       - Flask RESTive is a REST API Flask extension based on Flask-RESTful & Marshmallow.
+Flask-LoginManager (1.1.6)  - Flask-Loginmanager supports multiple roles and permissions for Flask, inspired by Flask-
+                              Login
+Flask-FlatPagesCut (0.5.1)  - Flask-FlatPagesCut is fork Flask-FlatPages (Provides flat static pages to a Flask
+                              application)
+flask-lesscss (0.9.1)       - A small Flask extension that adds LessCSS support to Flask.
+flask-shell (0.1.3)         - Flask extension to improve shell command for the Flask CLI.
+flask-coffee2js (0.1.2)     - A small Flask extension that adds CoffeScript support to Flask.
+Flask-Collect (1.3.2)       - Flask-Collect -- Collect static files in Flask application
+flask-stylus2css (0.1)      - A small Flask extension that adds Stylus support to Flask.
+flask-filters (0.3)         - The Flask Filter to use with flask-restful and Relational DB
+Flask-Edits (0.8)           - Editable Content in Flask
+Flask-CKEditor (0.4.4.1)    - CKEditor integration for Flask.
+Flask-Triangle (0.5.4)      - Integration of AngularJS and Flask.
+Flask-Zero (0.9.6)          - Qiniu Storage for Flask
+Flask-CuttlePool (0.2.0)    - A Flask extension for CuttlePool
+Flask-Funnel (0.1.10)       - Asset management for Flask.
+flask-logsocketio (0.1.4)   - Flask LogSocketIo module
+Flask-SaeStorage (0.9.0)    - SAE Storage for Flask
+Flask-Passlib (0.1)         - Flask extension for passlib
+flask-serial (1.1.0)        - Flask extension for the Serial
+flask-discoverer (0.1.4)    - Flask API autodiscovery
+flask-snow (0.2.8)          - Pysnow extension for Flask
+Flask-ZMQ (0.1.2)           - Flask extension for ZMQ
+Flask-wechatpy (0.1.3)      - wechatpy for flask extension
+Flask-Vises (2.1.4)         - A Flask scaffold library
+Flask-PyFCM (0.1.1)         - Flask extension for PyFCM
+Flask-sshtunnel (0.1b2)     - sshtunnel extension for flask
+Flask-Enterprise (1.0)      - Enterprise capabilities for Flask
+Flask-SAML (0.4.3)          - Flask SAML integration
+Flask-Flarf (0.0.5)         - Flask request filtering
+flask-tat (0.0.10)          - Flask TAT client
+Flask-Testing (0.8.0)       - Unit testing for Flask
+flask-authentic (0.0.11)    - Flask Authentic Extension
+flask-now (0.2.2)           - Flask App Generator
+Flask-Config (0.2.1)        - Flask configuration class
+Flask-MySQLdb (0.2.0)       - MySQLdb extension for Flask
+Flask-RBAC (0.3.0)          - RBAC support for Flask
+castle-flask (0.0.1)        - A Flask client for Castle.io
+flask-handlers (0.0.1)      - Handlers for Flask applications
+Flask-Htmldoom (0.1.2)      - htmldoom integration for Flask
+Flask-CassandraDB (0.0.1)   - connect cassandra to flask
+Flask-Reggie (0.0.2)        - Flask Regex Routes.
+Flask-OpenID (1.2.5)        - OpenID support for Flask
+Flask-Shelve (0.1.1)        - Shelve support for Flask
+Flask-Breve (0.2)           - Breve templating with Flask
+Flask-mongobit (0.3.0)      - MongoBit support in Flask
+Flask-Navigation (0.2.0)    - The navigation of Flask application.
+flask-iMail (0.1)           - Mailgun integration for Flask.
+Flask-Slack (0.1.5)         - Slack extension for Flask.
+Flask-Triangle3 (0.5.3)     - Integration of AngularJS and Flask.
+Flask-Autodoc (0.1.2)       - Documentation generator for flask
+Flask-CAS (1.0.2)           - Flask extension for CAS
+Flask-Failsafe (0.2)        - A failsafe for the Flask reloader
+nailpack-flask (0.1.0)      - Flask support for nails
+Flask-Avatar (0.1.3)        - To generate avatar for flask
+Flask-wangEditor (0.0.3.2)  - wangEditor integration for Flask.
+flask-adh (0.1)             - flask admin antd
+
+
+Description: pip search, Searches for pyPI packages whose name or summary contains the query. In which this case, it would be flask.

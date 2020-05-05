@@ -14,3 +14,13 @@
 .form-group label{
     font-size: large;
 }
+
+.carousel-inner{
+    max-height: 400px;
+}
+
+.randomContainer{
+    /* margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem; */
+}
