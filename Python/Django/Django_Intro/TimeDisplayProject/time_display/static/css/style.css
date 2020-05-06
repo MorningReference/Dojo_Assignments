@@ -1,0 +1,24 @@
+*{
+    text-align: center;
+}
+
+h1, .time-container, .time-container-two{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 20px;
+}
+h1{
+    padding: 20px;
+    font-size: xx-large;
+}
+.time-container, .time-container-two{
+    padding: 30px 200px;
+    font-size: larger;
+}
+.time-container{
+    color: red;
+    
+}
+.time-container-two{
+    color: blue;
+}

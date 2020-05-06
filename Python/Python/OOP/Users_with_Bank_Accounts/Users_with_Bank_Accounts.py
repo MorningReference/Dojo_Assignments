@@ -5,6 +5,9 @@ class User:
         self.email = email_address
         self.boa_account = BankAccount(int_rate = 0.02)
         self.chase_account = BankAccount(int_rate = 0.01)
+        # self.account = 
+
+        # self.bank_account_list = {bankAccount1, bankAccount2}
 
 
     def make_deposit(self, bankAccount, amount):
@@ -33,6 +36,10 @@ class User:
             return self
         
 
+    # def open_bank_account(self, bankAccount):
+    #     self.bank_account_list.append(bankAccount)
+    #     return self
+
     # def transfer_money(self, other_user, amount):
     #     self.account.balance -= amount
     #     other_user.account.balance += amount
@@ -57,8 +64,11 @@ class BankAccount:
         return self
 
 aric = User('Aric', 'aric@gmail.com')
+BoaAccount = BankAccount(0.02)
+ChaseAccount = BankAccount(0.01)
+
+# aric.open_bank_account(BoaAccount)
 
 aric.make_deposit('boa', 200).display_user_balance('boa')
 
 aric.make_deposit('chase', 300).make_withdrawl('chase', 30).display_user_balance('chase')
-
