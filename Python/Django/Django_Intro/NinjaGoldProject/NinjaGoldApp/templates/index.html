@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Ninja Gold Game</h1>
+        <div class="header mt-4">
+            <form action="/set_win_condition" method="POST" class="">
+                {% csrf_token %}
+                <div class="row ml-1">
+                    <label for="win_turn">Set your win turn condition here:</label>
+                    <input type="number" name="win_turn" class="ml-3" value={% if 'win_turn' in request.session %} {{ request.session.win_turn }} {% endif %}>
+                </div>
+                <div class="row ml-1">
+                    <label for="win_gold">Set your win gold condition here:</label>
+                    <input type="number" name="win_gold" class="ml-3" value={% if 'win_gold' in request.session %} {{ request.session.win_gold }} {% endif %}>
+                </div>
+                <button type="submit" class="btn btn-primary">Set Win Conditions</button>
+            </form>
+            <div class="information_container row mt-3 d-flex justify-content-between">
+                <p>Your Gold:</p>
+                <p class="border col-2">{{ request.session.gold }}</p>
+                <p>Number of turns:</p>
+                <p class="border col-2">{{ request.session.move }}</p>
+            </div>
+        </div>
+        <div class="main-content d-flex justify-content-between">
+            <div class="farm border px-3 py-4 m-1 text-center  bg-light rounded">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <a href="/process_money/farm">
+                    <input type="hidden" name="farmButton" value="{{ request.session.farmRandom }}">
+                    <button type="submit"class="btn btn-secondary">Find Gold!</button>
+                </a>
+            </div>
+            <div class="cave border px-3 py-4 m-1 text-center bg-light rounded">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <a href="/process_money/cave">
+                    <input type="hidden" name="caveButton" value="{{ request.session.caveRandom }}">
+                    <button type="submit"class="btn btn-secondary">Find Gold!</button>
+                </a>
+            </div>
+            <div class="house border px-3 py-4 m-1 text-center bg-light rounded">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <a href="/process_money/house">
+                    <input type="hidden" name="houseButton" value="{{ request.session.houseRandom }}">
+                    <button type="submit"class="btn btn-secondary">Find Gold!</button>
+                </a>
+            </div>
+            <div class="casino border px-3 py-4 m-1 text-center bg-light rounded">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <a href="/process_money/casino">
+                    <input type="hidden" name="casinoButton" value="{{ request.session.casinoRandom }}">
+                    <button type="submit"class="btn btn-secondary">Find Gold!</button>
+                </a>
+            </div>
+        </div>
+        <div class="activities mt-3">
+            <p>Activities:</p>
+            <div class="row">
+                <div class="activities_container border col-12">
+                    {% for item in request.session.activities %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <a href="/refresh"><button class="btn btn-success">Start Over</button></a>
+    </div>
+</body>
+</html>
