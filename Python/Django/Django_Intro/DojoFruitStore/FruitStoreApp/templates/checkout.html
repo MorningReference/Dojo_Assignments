@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="order-info-container">
+            <h1>Thank you for your order!</h1>
+            <p>We ordered {{totalAmtFruits}} items for you and charged your student account on {{datetime}}.</p>
+        </div>
+        <div class="order-detail-container">
+            <h3>You've ordered</h3>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>Strawberry</td>
+                    <td>{{strawberryAmt}}</td>
+                </tr>
+                <tr>
+                    <td>RaspBerry</td>
+                    <td>{{raspberryAmt}}</td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>{{appleAmt}}</td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="info-container-left">
+            <h3 id="info-title">Your Information</h3>
+            <p>Name:</p>
+            <p>Your Student ID:</p>
+        </div>
+        <div class="info-continer-right">
+            <p>{{name}}</p>
+            <p>{{studentId}}</p>
+        </div>
+    </div>
+</body>
+</html>

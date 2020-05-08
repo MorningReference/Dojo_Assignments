@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <h1>Dojo Fruit Store!</h1>
+            <h2>What would you like to buy?</h2>
+            <form action="/checkout" method="POST">
+                {% csrf_token %}
+                <table class="fruit-quantities">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                    <tr>
+                        <td>Strawberry</td>
+                        <td>
+                            <select id="strawberry" name="strawberryAmt">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Raspberry</td>
+                        <td>
+                            <select id="raspberry" name="raspberryAmt">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Apple</td>
+                        <td>
+                            <select id="apple" name="appleAmt">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="form-info-description">
+                    <h2>Your Information</h2>
+                    <p>Name:</p>
+                    <p>Your Student ID:</p>
+                </div>
+                <div class="form-info-input">
+                    <input type="text" name="name" id="name">
+                    <input type="text" name="student-id" id="student-id">
+                    <button type="submit">Buy me stuff!</button>
+                </div>
+            </form>
+        </div>
+                <div class="detail-bar">
+                    <h2>Welcome to Dojo Fruit Store!</h2>
+                    <p>
+                        Your dojo decided to buy fruits for all the students!
+                        Please use this app to tell us what you would like to have!
+                        Once we get your order we'll charge your student account automatically.
+                    </p>
+                    <p>
+                        Dojo Fruit Store is proudly built using Django.
+                    </p>
+                </div>
+    </div>
+</body>
+</html>

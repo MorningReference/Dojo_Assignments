@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Submitted Info</h1>
+        <div class="left-side">
+            <p>Name:</p>
+            <p>Dojo Location:</p>
+            <p>Favorite Language:</p>
+            <p>Comment:</p>
+        </div>
+        <div class="right-side">
+            <p>{{name}}</p>
+            <p>{{dojoLocation}}</p>
+            <p>{{favLanguage}}</p>
+            <p>{{comment}}</p>
+        </div>
+        <form action="/goBack" method="POST">
+            {% csrf_token %}
+            <button type="submit">Go Back</button>
+        </form>
+    </div>
+</body>
+</html>

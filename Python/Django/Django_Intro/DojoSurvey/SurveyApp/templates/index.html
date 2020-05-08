@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form action="/result" method="POST">
+            {% csrf_token %}
+            <div class="input-descriptions">
+                <p>Your Name:</p>
+                <p>Dojo Location:</p>
+                <p>Favorite Language:</p>
+                <p>Comment (optional):</p>
+            </div>
+            <div class="input-boxes">
+                <input type="text" name="name">
+                <input type="radio" id="los-angeles" name="dojo-location" value="Los Angeles">
+                <label for="los-angeles">Los Angeles</label>
+                <input type="radio" id="orange-county" name="dojo-location" value="Orange County">
+                <label for="orange-county">Orange County</label>
+                <input type="radio"  id="boise" name="dojo-location" value="Boise">
+                <label for="boise">Boise</label>
+                <input type="checkbox" id="python" name="fav-lang" value="Python">
+                <label for="python">Python</label>
+                <input type="checkbox" id="csharp" name="fav-lang" value="C#">
+                <label for="csharp">C#</label>
+                <input type="checkbox" id="javascript" name="fav-lang" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+                <textarea name="comment" cols="30" rows="10"></textarea>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
