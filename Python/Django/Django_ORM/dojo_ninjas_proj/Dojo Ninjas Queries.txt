@@ -1,0 +1,51 @@
+Create 3 new dojos:
+
+dojos.objects.create(name="LA Dojo", city="Burbank", state="CA")
+dojos.objects.create(name="OC Dojo", city="Orange County", state="CA")
+dojos.objects.create(name="SF Dojo", city="San Francisco", state="CA")
+
+Delete the 3 dojos you just created:
+
+dojos.objects.get(id=1).delete()
+dojos.objects.get(id=2).delete()
+dojos.objects.get(id=3).delete()
+
+Create 3 more dojos:
+
+dojos.objects.create(name="Black Belt Dojo", city="Northridge", state="CA")
+dojos.objects.create(name="Pooh Dojo", city="Fresno", state="CA")
+dojos.objects.create(name="Pizza Dojo", city="Chicago", state="IL")
+
+Create 3 ninjas that belong to the first dojo:
+
+ninjas.objects.create(dojo_id=dojos.objects.get(id=4), first_name="Bruce", last_name="Lee")
+ninjas.objects.create(dojo_id=dojos.objects.get(id=4), first_name="Jackie", last_name="Chan")
+ninjas.objects.create(dojo_id=dojos.objects.get(id=4), first_name="Jet", last_name="Li")
+
+Create 3 ninjas that belong to the second dojo:
+second_dojo = dojos.objects.get(id=5)
+ninjas.objects.create(dojo_id=second_dojo, first_name="Winnie", last_name="Pooh")
+ninjas.objects.create(dojo_id=second_dojo, first_name="Pig", last_name="Let")
+ninjas.objects.create(dojo_id=second_dojo, first_name="Kanga", last_name="Roo")
+
+Create 3 ninjas that belong to the third dojo:
+
+ninjas.objects.create(dojo_id=third_dojo,first_name="Peppa",last_name="Roni")
+ninjas.objects.create(dojo_id=third_dojo,first_name="Hawa",last_name="Ian")
+ninjas.objects.create(dojo_id=third_dojo,first_name="Bbq",last_name="Chicken")
+
+Retrieve all the ninjas from the first dojo:
+
+dojos.objects.first().ninjas.all()
+
+Retrieve all the ninjas from the last dojo:
+
+dojos.objects.last().ninjas.all()
+
+Retrieve the last ninja's dojo:
+
+ninjas.objects.last().dojo_id
+
+Create a new dojo:
+
+dojos.objects.create(name="TV Dojo",city="New York City",state="NY",desc="A dojo with a myriad of TVs.")
