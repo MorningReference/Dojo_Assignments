@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Show</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container p-3">
+        <div class="header text-right">
+            <a href="/shows">Go Back</a>
+        </div>
+        <h1>Add a New Show</h1>
+        <form action="/shows/new/create" method="POST" class="my-3">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="show_title">Title</label>
+                <input type="text" name="show_title" class="form-control">
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="show_network">Network</label>
+                    <input type="text" name="show_network" class="form-control col-9">
+                    <!-- <select name="network_id" class="form-control col-9">
+                        {% for network in all_the_networks %}
+                        <option value="{{network.id}}">{{network.name}}</option>
+                        {% endfor %}
+                    </select> -->
+                </div>
+                <div class="form-group col-6">
+                    <label for="release_date">Release Date</label>
+                    <input type="date" name="release_date" class="form-control col-9">
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <label for="show_desc">Description</label>
+                <textarea class="form-control" name="show_desc" rows="3"></textarea>
+            </div>
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+        </form>
+    </div>
+</body>
+</html>

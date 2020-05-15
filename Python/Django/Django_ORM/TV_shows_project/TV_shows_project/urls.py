@@ -1,4 +1,4 @@
-"""dojo_ninjas_proj URL Configuration
+"""TV_shows_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', include('dojo_ninjas_app.urls')),
+    path('shows/', include('TV_shows_app.urls')),
+    path('', RedirectView.as_view(url='shows/')),
 ]
