@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar navbar-light bg-light border-bottom mb-5 d-flex justify-content-between">
+            <h1>CodingDojo Wall</h1>
+            <div class="left-header">
+                <h5 class="d-inline-block">Welcome {{userName}}!</h5>
+                <a href="/wall/logout" class="d-inline-block">log off</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <form action="/wall/post_message" method="POST">
+                {% csrf_token %}
+                <label for="message">Post a message</label>
+                <textarea name="message" class="form-control" rows="4"></textarea>
+                <div class="text-right mt-2">
+                    <button type="submit" class="btn btn-primary">Post a message</button>
+                </div>
+            </form>
+            {% for message in all_the_messages_sorted %}
+            {% for single_message in messages %}
+            {% if single_message.extra_tags == message.id|stringformat:"i" %}
+                <span class="col-sm-12 text-danger d-block pl-0">{{single_message}}</span>
+            {% endif %}
+            {% endfor %}
+                <span class="d-inline-block">{{message.user.first_name}} {{message.user.last_name}} - {{message.created_at}}</span>
+                {% if message.user.id == userId %}
+                    <form action="/wall/delete_message/{{message.id}}" method="POST" class="d-inline-block">
+                        {% csrf_token %}
+                        <input type="hidden" name="messageId" value="{{message.id}}">
+                        <button type="submit" class="btn btn-sm btn-outline-danger ml-2">Delete</button>
+                    </form>
+                {% endif %}
+                <p class="ml-2">{{message.message}}</p>
+                <div class="comments ml-4">
+                    {% for comment in message.comments.all %}
+                        <span>{{comment.user.first_name}} {{comment.user.last_name}} - {{comment.created_at }}</span>
+                        <p class="ml-4">{{comment.comment}}</p>
+                    {% endfor %}
+                </div>
+                <form action="/wall/post_comment/{{message.id}}" method="POST">
+                    {% csrf_token %}
+                    <label for="comment">Post a comment</label>
+                    <textarea name="comment" class="form-control" rows="2"></textarea>
+                    <div class="text-right mt-2">
+                        <button type="submit" class="btn btn-success">Post a comment</button>
+                    </div>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
