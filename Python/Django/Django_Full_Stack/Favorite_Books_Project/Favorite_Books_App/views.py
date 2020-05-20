@@ -44,6 +44,14 @@ def displayBook(request, bookId):
         return render(request, 'displayBook.html', context)
 
 def editBook(request, bookId):
+    errors = Book.objects.update_validation(request.POST)
+
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value, extra_tags = key)
+        print('this ran')
+        return redirect(f'/books/{bookId}')
+
     book = Book.objects.get(id = bookId)
     book.title = request.POST['updated_title']
     book.desc = request.POST['updated_desc']

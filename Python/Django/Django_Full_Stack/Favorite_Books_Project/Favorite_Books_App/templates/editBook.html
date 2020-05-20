@@ -15,10 +15,20 @@
         <div class="main-content d-flex justify-content-between">
             <form action="/books/{{book.id}}/edit" method="POST" class="form">
                 {% csrf_token %}
+                {% for message in messages %}
+                {% if message.extra_tags == 'updated_title' %}
+                    <span class="col-sm-12 text-danger d-block pl-0">{{message}}</span>
+                {% endif %}
+                {% endfor %}
                 <h3><input type="text" name="updated_title" class="form-control" value="{{book.title}}"></h3>
                 <p>Added By: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
                 <p>Added On: {{book.created_at}}</p>
                 <p>Last updated on: {{book.updated_at}}</p>
+                {% for message in messages %}
+                {% if message.extra_tags == 'updated_desc' %}
+                    <span class="col-sm-12 text-danger d-block pl-0">{{message}}</span>
+                {% endif %}
+                {% endfor %}
                 <p>Description: 
                     <textarea name="updated_desc" class="form-control" rows="3">{{book.desc}}</textarea>
                 </p>

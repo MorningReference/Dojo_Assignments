@@ -11,6 +11,15 @@ class BookManager(models.Manager):
             errors['book_desc'] = "The description of the book must be at least 5 characters long!"
         return errors
 
+    def update_validation(self, postData):
+        errors ={}
+
+        if len(postData['updated_title']) == 0:
+            errors['updated_title'] = "The title is required, please enter a title!"
+        if len(postData['updated_desc']) < 5:
+            errors['updated_desc'] = "The description of the book must be at least 5 characters long!"
+        return errors
+
 
 
 class Book(models.Model):

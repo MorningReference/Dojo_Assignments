@@ -9,6 +9,6 @@ urlpatterns = [
     path('<int:bookId>/like', views.likeBook),
     path('<int:bookId>/unlike', views.unlikeBook),
     path('<int:bookId>/delete', views.deleteBook),
-    path('favoriteBooks', views.favoriteBooks)
+    path('favoriteBooks', views.favoriteBooks),
     path('logout', views.logout)
 ]
