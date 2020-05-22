@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar navbar-light bg-light border-bottom mb-5 row">
+        <div class="col-7"></div>
+        <div class="col-5 row text-right">
+            <a href="/books" class="col-sm-4">Home</a>
+            <a href="/books/add" class="col-sm-4">Add Book and Review</a>
+            <a href="/logout" class="col-sm-4">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>User Alias: {{user.alias}}</h1>
+        <h3>Name: {{user.name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Total Reviews: {{user.reviews.all|length}}</h3>
+        <div class="reviews-list mt-5">
+            <h3>Posted Reviews on the following books:</h3>
+            <ul>
+                {% for book in all_books_reviewed %}
+                <li><a href="/books/{{book.id}}">{{book.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>

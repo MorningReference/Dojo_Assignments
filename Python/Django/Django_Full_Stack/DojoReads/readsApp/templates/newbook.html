@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar navbar-light bg-light border-bottom mb-5 row">
+        <div class="col-sm-9"></div>
+        <div class="col-sm-3 row text-right">
+            <a href="/books" class="col-sm-6">Home</a>
+            <a href="/logout" class="col-sm-6">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Add a New Book Title and a Review:</h1>
+        <form action="/books/create" method="POST">
+            {% csrf_token %}
+            {% for message in messages %}
+            {% if message.extra_tags == "book-title" %}
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <span class="col-sm-8 text-danger pl-0">{{message}}</span>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="form-group row">
+                <label for="book-title" class="col-sm-4">Book Title: </label>
+                <input type="text" name="book-title" class="form-control col-sm-8">
+            </div>
+            
+            <div class="form-group">
+                <label>Author:</label>
+                {% for message in messages %}
+                {% if message.extra_tags == "book-author" %}
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <span class="col-sm-8 text-danger pl-0">{{message}}</span>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="form-group row ml-2">
+                    <label for="select-author" class="col-sm-4">Choose from the list:</label>
+                    <select name="select-author" class="form-control col-sm-8">
+                        <option value="">Add an author from the list</option>
+                        {% for author in all_the_authors %}
+                        <option value="{{author.name}}">{{author.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group row ml-2">
+                    <label for="book-author" class="col-sm-4">Or add a new author:</label>
+                    <input type="text" name="book-author" class="form-control col-sm-8">
+                </div>
+            </div>
+            {% for message in messages %}
+            {% if message.extra_tags == "book-review" %}
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <span class="col-sm-8 text-danger pl-0">{{message}}</span>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="form-group row">
+                <label for="book-review" class="col-sm-3">Review: </label>
+                <textarea name="book-review" class="form-control col-sm-8" rows="3"></textarea>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-4 row">
+                    <label for="book-rating" class="col-sm-4">Rating:</label>
+                    <select name="select-rating" class="form-control col-sm-4">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                    <label class="col-sm-4"> stars</label>
+                </div>
+                <div class="col-sm-8"></div>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary">Add Book and Review</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

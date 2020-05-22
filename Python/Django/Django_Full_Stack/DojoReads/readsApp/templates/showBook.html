@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar navbar-light bg-light border-bottom mb-5 row">
+        <div class="col-9"></div>
+        <div class="col-3 row text-right">
+            <a href="/books" class="col-sm-6">Home</a>
+            <a href="/logout" class="col-sm-6">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>{{book.title}}</h1>
+        <p>Author: {{book.author.name}}</p>
+        <div class="main-content row mt-5">
+            <div class="reviews col-8">
+                <h2>Reviews:</h2>
+                {% for review in all_the_reviews %}
+                <div class="border-top border-bottom">
+                    <div class="row pl-3">
+                        <p class="col-sm-2 col-lg-1 pl-0">Rating:</p>
+                        {% for i in "x"|rjust:review.rating %}
+                        <svg class="bi bi-star-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="yellow" xmlns="http://www.w3.org/2000/svg" stroke="black">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        {% endfor %}
+                    </div>
+                    <p>
+                        <a href="/users/{{review.user_reviewed.id}}">{{review.user_reviewed.alias}} </a>
+                        says: 
+                        {{review.desc}}
+                    </p>
+                    <div class="row">
+                        <p>Posted on {{review.created_at}}</p>
+                        <a href="/books/{{book.id}}/deleteReview/{{review.id}}">Delete this Review</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <form action="/books/{{book.id}}/review" method="POST" class="col-4">
+                {% csrf_token %}
+                {% for message in messages %}
+                {% if message.extra_tags == "review-desc" %}
+                    <span class="col-sm-8 text-danger pl-0">{{message}}</span>
+                {% endif %}
+                {% endfor %}
+                <div class="form-group">
+                    <label for="review-desc">Add a Review:</label>
+                    <textarea name="review-desc" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="row">
+                    <label for="book-rating" class="col-3">Rating:</label>
+                    <select name="book-rating" class="form-control col-4">
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                    </select>
+                    <label class="col-4"> stars</label>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
