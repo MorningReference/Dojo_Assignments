@@ -6,7 +6,7 @@ import re
 class UserManager(models.Manager):
     def registration_validation(self, postData):
         EMAIL_REGEX = re.compile(r'^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')
-        PW_REGEX = re.compile(r'^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$')
+        PW_REGEX = re.compile(r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,32}$")
         errors = {}
 
         #First name validation
@@ -17,6 +17,7 @@ class UserManager(models.Manager):
         elif len(postData['first_name']) > 30:
             erorrs['first_name'] = "The first name cannot be more than 30 characters long!"
             
+        #Last name validation
         if len(postData['last_name']) == 0:
             errors['last_name'] = "This field cannot be left empty!"
         elif len(postData['last_name']) < 2:
@@ -24,7 +25,7 @@ class UserManager(models.Manager):
         elif len(postData['last_name']) > 30:
             erorrs['last_name'] = "The last name cannot be more than 30 characters long!"
 
-        #Last name validation
+        #Email validation
         user = User.objects.filter(email = postData['email'])
         if len(postData['email']) == 0:
             errors['email'] = "This field cannot be left empty!"
@@ -35,11 +36,6 @@ class UserManager(models.Manager):
         elif user:
             errors['email'] = "Email already registered! Please use another email address."
 
-        #Birthdate validation
-        if parse_date(postData['birthdayReg']) > date.today():
-            errors['birthdayReg'] = "You must enter a date in the past!"
-        elif parse_date(postData['birthdayReg']) >= date(date.today().year - 13, date.today().month, date.today().day):
-            errors['birthdayReg'] = "You must be older than 13 to register!"
 
         #Password validation
         if len(postData['password']) == 0:
@@ -53,6 +49,36 @@ class UserManager(models.Manager):
 
         return errors
 
+    # def update_validation(self, postData):
+    #     EMAIL_REGEX = re.compile(r'^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')
+    #     errors = {}
+
+    #     if len(postData['updated_first_name']) == 0:
+    #         errors['updated_first_name'] = "This field cannot be left blank!"
+    #     elif len(postData['updated_first_name']) < 2:
+    #         errors['updated_first_name'] = "The first name has to be more than 2 characters long!"
+    #     elif len(postData['updated_first_name']) > 30:
+    #         erorrs['updated_first_name'] = "The first name cannot be more than 30 characters long!"
+            
+    #     if len(postData['updated_last_name']) == 0:
+    #         errors['updated_last_name'] = "This field cannot be left blank!"
+    #     elif len(postData['updated_last_name']) < 2:
+    #         errors['updated_last_name'] = "The last name has to be more than 2 characters long!"
+    #     elif len(postData['updated_last_name']) > 30:
+    #         erorrs['updated_last_name'] = "The last name cannot be more than 30 characters long!"
+
+    #     user = User.objects.exclude(email = postData['updated_email'])
+    #     if len(postData['updated_email']) == 0:
+    #         errors['updated_email'] = "This field cannot be left empty!"
+    #     elif len(postData['updated_email']) < 6:
+    #         errors['updated_email'] = "Invalid email address!"
+    #     elif not EMAIL_REGEX.match(postData['updated_email']):
+    #         errors['updated_email'] = "Invalid email address!"
+    #     elif postData['updated_email'] in user:
+    #         errors['updated_email'] = "Email already registered! Please use another email address."
+
+    #     return errors
+
 
 class User(models.Model):
     first_name = models.CharField(max_length = 30)
@@ -60,7 +86,7 @@ class User(models.Model):
     email = models.CharField(max_length = 50)
     password = models.CharField(max_length = 200)
 
-    created_at = models.CharField(auto_now_add = True)
-    updated_at models.CharField(auto_now = True)
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
 
     objects = UserManager()

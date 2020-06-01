@@ -6,7 +6,6 @@ import re
 class UserManager(models.Manager):
     def registration_validation(self, postData):
         EMAIL_REGEX = re.compile(r'^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$')
-        PW_REGEX = re.compile(r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,32}$")
         errors = {}
 
         #First name validation

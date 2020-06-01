@@ -1,0 +1,30 @@
+
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Length</th>
+                <th>Venomous</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for snake in all_snakes %}
+                <tr>
+                    <td><a class="seeSnake" href="/snakes/{{snake.id}}">{{snake.name}}</a></td>
+                    <td>{{snake.length}} feet</td>
+                    <td>
+                        {% if snake.venomous == True %}
+                        Yes
+                        {% else %}
+                        No
+                        {% endif %}
+                    </td>
+                    <td><a id="snakeNumber{{snake.id}}" class="deleteSnake"
+                            href="/snakes/{{snake.id}}/delete">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
