@@ -35,6 +35,10 @@ namespace WizardNinjaSamurai
             naruto.Attack(musashi);
             naruto.Attack(musashi);
             naruto.Attack(musashi);
+            naruto.Steal(musashi);
+            musashi.Meditate();
+            musashi.DisplayStats();
+            naruto.DisplayStats();
         }
     }
 }

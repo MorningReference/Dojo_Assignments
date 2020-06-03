@@ -1,0 +1,11 @@
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.exe
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.deps.json
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.runtimeconfig.json
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.runtimeconfig.dev.json
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.dll
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\bin\Debug\netcoreapp3.1\IronNinja.pdb
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\obj\Debug\netcoreapp3.1\IronNinja.csprojAssemblyReference.cache
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\obj\Debug\netcoreapp3.1\IronNinja.AssemblyInfoInputs.cache
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\obj\Debug\netcoreapp3.1\IronNinja.AssemblyInfo.cs
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\obj\Debug\netcoreapp3.1\IronNinja.dll
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\OOP\IronNinja\obj\Debug\netcoreapp3.1\IronNinja.pdb
