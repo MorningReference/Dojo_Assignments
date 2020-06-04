@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-div {
+  text-align: center;
+}
+
+.project-desc {
+  display: inline-block;
+}
+
+.project-group img {
+  width: 200px;
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+}
+
+.left,
+.right {
+  display: inline-block;
+}
+
+form {
+  text-align: center;
+}
