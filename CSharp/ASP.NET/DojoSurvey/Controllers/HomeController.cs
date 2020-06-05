@@ -1,3 +1,4 @@
+using DojoSurvey.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DojoSurvey.Controllers
@@ -10,13 +11,10 @@ namespace DojoSurvey.Controllers
             return View("Index");
         }
         [HttpPost("result")]
-        public ViewResult Result(string name, string location, string favLang, string comment)
+        public ViewResult Result(Survey survey)
         {
-            ViewBag.Name = name;
-            ViewBag.Location = location;
-            ViewBag.FavLang = favLang;
-            ViewBag.Comment = comment;
-            return View("Result");
+
+            return View("Result", survey);
         }
     }
 }

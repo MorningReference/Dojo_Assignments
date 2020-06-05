@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@model DojoSurvey.Models.Survey
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
                 <p>Name:</p>
             </div>
             <div class="col-6">
-                <p>@ViewBag.Name</p>
+                <p>@Model.Name</p>
             </div>
         </div>
         <div class="row">
@@ -22,7 +22,7 @@
                 <p>Location:</p>
             </div>
             <div class="col-6">
-                <p>@ViewBag.Location</p>
+                <p>@Model.Location</p>
             </div>
         </div>
         <div class="row">
@@ -30,7 +30,7 @@
                 <p>FavLang:</p>
             </div>
             <div class="col-6">
-                <p>@ViewBag.FavLang</p>
+                <p>@Model.FavLang</p>
             </div>
         </div>
         <div class="row">
@@ -38,7 +38,7 @@
                 <p>Comment:</p>
             </div>
             <div class="col-6">
-                <p>@ViewBag.Comment</p>
+                <p>@Model.Comment</p>
             </div>
         </div>
         <div class="text-right">
