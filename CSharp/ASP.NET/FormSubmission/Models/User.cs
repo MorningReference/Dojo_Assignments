@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FormSubmission.Models
@@ -12,26 +13,27 @@ namespace FormSubmission.Models
         [Required]
         [MinLength(4)]
         [Display(Name = "Last Name:")]
-
         public string LastName { get; set; }
 
         [Required]
         [Range(0, int.MaxValue)]
         [Display(Name = "Age:")]
-
         public int Age { get; set; }
+
+        [Required]
+        [FutureDate]
+        [Display(Name = "Birthday:")]
+        public DateTime BirthDate { get; set; }
 
         [Required]
         [EmailAddress]
         [Display(Name = "Email Address:")]
-
         public string EmailAddress { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [MinLength(8)]
         [Display(Name = "Password:")]
-
         public string Password { get; set; }
     }
 }
