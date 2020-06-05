@@ -1,0 +1,54 @@
+﻿@model User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Web Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter your information</h1>
+        <form asp-action="CreateUser" asp-controller="Home" method="POST">
+            <div class="form-group">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <div class="row">
+                    <label asp-for="FirstName" class="col-4"></label>
+                    <input asp-for="FirstName" class="col-8">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <div class="row">
+                    <label asp-for="LastName" class="col-4"></label>
+                    <input asp-for="LastName" class="col-8">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Age" class="text-danger"></span>
+                <div class="row">
+                    <label asp-for="Age" class="col-4"></label>
+                    <input asp-for="Age" class="col-8">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                <div class="row">
+                    <label asp-for="EmailAddress" class="col-4"></label>
+                    <input asp-for="EmailAddress" class="col-8">
+                </div>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="row">
+                    <label asp-for="Password" class="col-4"></label>
+                    <input asp-for="Password" class="col-8">
+                </div>
+            </div>
+            <input value="Add User" type="submit">
+
+        </form>
+    </div>
+</body>
+</html>
