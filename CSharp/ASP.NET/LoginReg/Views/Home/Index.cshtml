@@ -1,0 +1,68 @@
+﻿@using LoginReg.Models
+@model IndexViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="register col-6">
+                <h1>Register</h1>
+                <form class="form" asp-action="Register" asp-controller="Home" method="POST">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label asp-for="RegUser.FirstName"></label>
+                            <input asp-for="RegUser.FirstName" class="form-control">
+                            <span class="text-danger" asp-validation-for="RegUser.FirstName"></span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label asp-for="RegUser.Password"></label>
+                            <input asp-for="RegUser.Password" class="form-control">
+                            <span class="text-danger" asp-validation-for="RegUser.Password"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label asp-for="RegUser.LastName"></label>
+                            <input asp-for="RegUser.LastName" class="form-control">
+                            <span class="text-danger" asp-validation-for="RegUser.LastName"></span>
+                        </div>
+                        <div class="form-group col-6">
+                            <label asp-for="RegUser.ConfirmPW"></label>
+                            <input asp-for="RegUser.ConfirmPW" class="form-control">
+                            <span class="text-danger" asp-validation-for="RegUser.ConfirmPW"></span>
+                        </div>
+                    </div>
+                    <div class="form-group col-6 pl-0">
+                        <label asp-for="RegUser.Email"></label>
+                        <input asp-for="RegUser.Email" class="form-control">
+                        <span class="text-danger" asp-validation-for="RegUser.Email"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign up</button>
+                </form>
+            </div>
+            <div class="login col-6">
+                <h1>Login</h1>
+                <form class="form" asp-action="Login" asp-controller="Home" method="POST">
+                    <span class="text-danger" asp-validation-for="LogUser.Email"></span>
+                    <div class="form-group">
+                        <label asp-for="LogUser.Email"></label>
+                        <input asp-for="LogUser.Email" class="form-control">
+                    </div>
+                    <span class="text-danger" asp-validation-for="LogUser.Password"></span>
+                    <div class="form-group">
+                        <label asp-for="LogUser.Password"></label>
+                        <input asp-for="LogUser.Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
