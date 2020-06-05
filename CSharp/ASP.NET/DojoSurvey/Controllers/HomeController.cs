@@ -8,13 +8,20 @@ namespace DojoSurvey.Controllers
         [HttpGet("")]
         public ViewResult Index()
         {
-            return View("Index");
+            Survey survey = new Survey();
+            return View("Index", survey);
         }
         [HttpPost("result")]
-        public ViewResult Result(Survey survey)
+        public IActionResult Result(Survey survey)
         {
-
-            return View("Result", survey);
+            if (ModelState.IsValid)
+            {
+                return View("Result", survey);
+            }
+            else
+            {
+                return View("Index", survey);
+            }
         }
     }
 }
