@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">Fullness: @Model.Fullness</div>
+        <div class="col-3">Happiness: @Model.Happiness</div>
+        <div class="col-3">Meals: @Model.Meal</div>
+        <div class="col-3">Energy: @Model.Energy</div>
+    </div>
+    <div class="content text-center">
+        <img src="@Model.Image" alt="">
+        <p>@Model.Message</p>
+    </div>
+    <div class="text-center">
+        <a href="/restart" class="btn btn-light">Restart?</a>
+    </div>
+</div>
