@@ -1,0 +1,38 @@
+@model User
+<div class="row">
+    <h1 class="col-9">Register to this Cool Site!</h1>
+    <a href="/login" class="col-3">Login</a>
+</div>
+<form asp-action="ProcessRegister" asp-asp-controller="User" method="POST" class="form">
+    <div class="col-4">
+        <div class="form-group">
+            <label asp-for="FirstName"></label>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+            <input asp-for="FirstName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName"></label>
+            <span asp-validation-for="LastName" class="text-danger"></span>
+            <input asp-for="LastName" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input asp-for="Email" class="form-control">
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input asp-for="Password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="PasswordConfirm"></label>
+            <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+            <input asp-for="PasswordConfirm" class="form-control">
+        </div>
+    </div>
+    <div class="col-4"></div>
+    <button type="submit" class="btn btn-primary">Sign up Now</button>
+</form>
