@@ -17,6 +17,24 @@ namespace CRUDelicious.Migrations
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("CRUDelicious.Models.Chef", b =>
+                {
+                    b.Property<int>("ChefId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Birthdate");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired();
+
+                    b.Property<string>("LastName")
+                        .IsRequired();
+
+                    b.HasKey("ChefId");
+
+                    b.ToTable("Chefs");
+                });
+
             modelBuilder.Entity("CRUDelicious.Models.Dishes", b =>
                 {
                     b.Property<int>("DishId")
@@ -24,8 +42,7 @@ namespace CRUDelicious.Migrations
 
                     b.Property<int>("Calories");
 
-                    b.Property<string>("Chef")
-                        .IsRequired();
+                    b.Property<int>("ChefId");
 
                     b.Property<DateTime>("CreatedAt");
 
@@ -41,7 +58,17 @@ namespace CRUDelicious.Migrations
 
                     b.HasKey("DishId");
 
+                    b.HasIndex("ChefId");
+
                     b.ToTable("Dishes");
+                });
+
+            modelBuilder.Entity("CRUDelicious.Models.Dishes", b =>
+                {
+                    b.HasOne("CRUDelicious.Models.Chef", "Creator")
+                        .WithMany("CreatedDishes")
+                        .HasForeignKey("ChefId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

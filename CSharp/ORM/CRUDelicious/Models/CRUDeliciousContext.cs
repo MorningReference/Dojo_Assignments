@@ -7,5 +7,6 @@ namespace CRUDelicious.Models
         public CRUDeliciousContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Dishes> Dishes { get; set; }
+        public DbSet<Chef> Chefs { get; set; }
     }
 }

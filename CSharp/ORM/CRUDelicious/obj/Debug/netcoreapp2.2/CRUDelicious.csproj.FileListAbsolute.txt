@@ -31,3 +31,5 @@ C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\ne
 C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\DisplayDish.g.cshtml.cs
 C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\EditDish.g.cshtml.cs
 C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewDish.g.cshtml.cs
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\Dishes.g.cshtml.cs
+C:\Users\Aric Jeon\Desktop\Dojo_assignments\CSharp\ORM\CRUDelicious\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewChef.g.cshtml.cs

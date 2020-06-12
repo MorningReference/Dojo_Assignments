@@ -1,18 +1,37 @@
-﻿@model List<Dishes>
-<div class="text-center">
-    <h1>Welcome to CRUDelicious</h1>
+﻿@model List<Chef>
+<div class="text-right">
+    <a href="/new">Add a Chef</a>
 </div>
 <div class="row">
     <div class="col-8">
-        <p class="border-bottom pb-3">Check out some recent dishes!</p>
+        <p class="border-bottom pb-3">Check out our roster of Chefs</p>
         <div class="list mt-3">
-            @foreach(Dishes dish in Model)
-            {
-                <p><a href="/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
-            }
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col"># of Dishes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(Chef chef in Model)
+                    {
+                        <tr>
+                            <th>@chef.FirstName @chef.LastName</th>
+                            <th>@{int age = DateTime.Now.Year - chef.Birthdate.Year;}@age</th>
+                            @{
+                                int returnStatement = 0;
+                                if(chef.CreatedDishes != null)
+                                {
+                                    returnStatement = chef.CreatedDishes.Count();
+                                }
+                            }
+                            <th>@returnStatement</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-    </div>
-    <div class="col-4">
-        <a href="/new">Add a Dish</a>
     </div>
 </div>

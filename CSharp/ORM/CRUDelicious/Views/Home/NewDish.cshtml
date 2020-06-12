@@ -1,4 +1,4 @@
-@model Dishes
+@model IndexViewModel
 
 <div class="text-center">
     <h1>Add a new Dish!</h1>
@@ -10,26 +10,38 @@
     <div class="row">
         <div class="col-4">
             <div class="form-group">
-                <span asp-validation-for="Chef"></span>
-                <label asp-for="Chef"></label>
-                <input class="form-control" asp-for="Chef">
+                <span asp-validation-for="Dish.Name"></span>
+                <label asp-for="Dish.Name"></label>
+                <input class="form-control" asp-for="Dish.Name">
             </div>
             <div class="form-group">
-                <span asp-validation-for="Name"></span>
-                <label asp-for="Name"></label>
-                <input class="form-control" asp-for="Name">
+                <span asp-validation-for="Dish.Calories"></span>
+                <label asp-for="Dish.Calories"></label>
+                <input class="form-control" asp-for="Dish.Calories">
             </div>
             <div class="form-group">
-                <span asp-validation-for="Calories"></span>
-                <label asp-for="Calories"></label>
-                <input class="form-control" asp-for="Calories">
+                <span asp-validation-for="Dish.Description"></span>
+                <label asp-for="Dish.Description"></label>
+                <textarea class="form-control" asp-for="Dish.Description" rows="6"></textarea>
             </div>
         </div>
         <div class="col-4">
             <div class="form-group">
-                <span asp-validation-for="Tastiness"></span>
-                <label asp-for="Tastiness"></label>
-                <select class="form-control" asp-for="Tastiness">
+                <span asp-validation-for="Dish.ChefId"></span>
+                <label asp-for="Dish.ChefId"></label>
+                <select class="form-control" asp-for="Dish.ChefId">
+                @foreach(Chef chef in Model.AllChefs)
+                {
+                    <option value="@chef.ChefId">@chef.FirstName @chef.LastName @chef.ChefId</option>
+                }
+                </select>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <span asp-validation-for="Dish.Tastiness"></span>
+                <label asp-for="Dish.Tastiness"></label>
+                <select class="form-control" asp-for="Dish.Tastiness">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -38,13 +50,8 @@
                 </select>
             </div>
         </div>
-        <div class="col-4">
-            <div class="form-group">
-                <span asp-validation-for="Description"></span>
-                <label asp-for="Description"></label>
-                <textarea class="form-control" asp-for="Description" rows="6"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Dish</button>
-        </div>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Add Dish</button>
     </div>
 </form>

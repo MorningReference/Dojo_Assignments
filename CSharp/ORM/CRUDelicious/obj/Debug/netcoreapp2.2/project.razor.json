@@ -2961,6 +2961,11 @@
   "RootNamespace": "CRUDelicious",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\CRUDelicious\\Views\\Home\\NewChef.cshtml",
+      "TargetPath": "Views\\Home\\NewChef.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\CRUDelicious\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
@@ -2968,6 +2973,11 @@
     {
       "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\CRUDelicious\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\CRUDelicious\\Views\\Home\\Dishes.cshtml",
+      "TargetPath": "Views\\Home\\Dishes.cshtml",
       "FileKind": "mvc"
     },
     {
