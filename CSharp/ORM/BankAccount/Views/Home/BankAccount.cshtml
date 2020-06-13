@@ -1,0 +1,49 @@
+@model BankAccountViewModel
+
+<div class="row">
+    <h1 class="col-5">Welcome, @Model.CurrentUser.FirstName</h1>
+    <div class="col-2"></div>
+    <p class="col-5">Current balance: <span class="border">$@Model.CurrentUser.Balance</span></p>
+</div>
+<form asp-action="ProcessChange" asp-controller="Home" method="POST" class="form">
+    <div class="row">
+        <div class="col-5">
+            <div class="form-group">
+                <span asp-validation-for="Transaction.Amount"></span>
+                <div class="row">
+                    <label asp-for="Transaction.Amount" class="col-3"></label>
+                    <input asp-for="Transaction.Amount" class="col-6">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Transaction transaction in Model.AllUserTransactions)
+        {
+            <tr>
+                @{
+                if(transaction.Amount < 0)
+                {
+                    <td>-$@{double newAmt = transaction.Amount*-1;}@newAmt</td>
+                }
+                else{
+                    <td>$@transaction.Amount</td>
+                }
+                }
+                <td>@transaction.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>

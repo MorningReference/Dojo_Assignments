@@ -30,6 +30,8 @@ namespace BankAccount.Models
         [Compare("Password", ErrorMessage = "does not match entered password.")]
         public string ConfirmPassword { get; set; }
 
+        public double Balance { get; set; } = 0;
+
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

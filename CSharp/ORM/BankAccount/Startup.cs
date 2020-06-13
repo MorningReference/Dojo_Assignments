@@ -34,6 +34,7 @@ namespace BankAccount
 
             services.AddDbContext<BankAccountContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
             services.AddSession();
+            services.AddHttpContextAccessor();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -51,6 +52,7 @@ namespace BankAccount
 
             app.UseStaticFiles();
             // app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

@@ -2966,6 +2966,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\BankAccount\\Views\\Home\\Register.cshtml",
+      "TargetPath": "Views\\Home\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\BankAccount\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -2981,8 +2986,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\BankAccount\\Views\\Home\\BankAccount.cshtml",
+      "TargetPath": "Views\\Home\\BankAccount.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\BankAccount\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Aric Jeon\\Desktop\\Dojo_assignments\\CSharp\\ORM\\BankAccount\\Views\\Home\\Login.cshtml",
+      "TargetPath": "Views\\Home\\Login.cshtml",
       "FileKind": "mvc"
     },
     {

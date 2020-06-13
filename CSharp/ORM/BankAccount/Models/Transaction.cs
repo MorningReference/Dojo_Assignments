@@ -8,11 +8,10 @@ namespace BankAccount.Models
     {
         [Key]
         public int TransactionId { get; set; }
-        public float Amount { get; set; }
+        public double Amount { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public int UserId { get; set; }
 
-        [NotMapped]
         public User Creator { get; set; }
     }
 }
