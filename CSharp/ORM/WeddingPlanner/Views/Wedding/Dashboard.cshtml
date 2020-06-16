@@ -21,7 +21,7 @@
         {
             <tr>
                 <td><a href="/wedding/@wedding.WeddingId">@wedding.WedderOne & @wedding.WedderTwo</a></td>
-                <td>@wedding.Date</td>
+                <td>@wedding.Date.ToString("MMMM dd, yyyy")</td>
                 <td>@wedding.RSVP.Count</td>
                 @{
                     bool IsRsvp = false;

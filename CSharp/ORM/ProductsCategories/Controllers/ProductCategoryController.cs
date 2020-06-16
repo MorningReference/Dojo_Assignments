@@ -68,6 +68,13 @@ namespace ProductsCategories.Controllers
                 .ThenInclude(a => a.Product)
                 .Where(c => c.Products.All(a => a.Product.ProductId != productId)).ToList();
 
+            IEnumerable<Category> relatedCategories = ProductWithCategories.Categories
+                .Select(a => a.Category);
+
+            List<Category> UnrelatedCats = db.Categories
+                .Except(relatedCategories)
+                .ToList();
+
             SingleProductViewModel SingleProduct = new SingleProductViewModel();
             SingleProduct.Product = ProductWithCategories;
             SingleProduct.AllCategoriesForProduct = AllCategories;

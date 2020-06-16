@@ -1,0 +1,30 @@
+@model CustomersViewModel
+
+<form asp-action="CreateCustomer" asp-controller="Home" method="POST" class="form">
+    <h1>Add a new customer</h1>
+    <div class="form-group row">
+        <label asp-for="CustomerToAdd.Name"></label>
+        <input asp-for="CustomerToAdd.Name">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Customer customer in Model.AllCustomers)
+        {
+            <tr>
+                <th>@customer.Name</th>
+                <th>@customer.CreatedAt</th>
+                <th><a href="/customer/@customer.CustomerId/remove" class="btn btn-danger text-light">Remove</a></th>
+            </tr>
+        }
+    </tbody>
+</table>

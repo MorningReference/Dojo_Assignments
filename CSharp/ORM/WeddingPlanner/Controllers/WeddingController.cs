@@ -31,14 +31,15 @@ namespace WeddingPlanner.Controllers
                     .ThenInclude(r => r.User)
                     .ToList();
 
-                foreach (Wedding wedding in wrapper.AllWeddings)
-                {
-                    if (wedding.Date <= DateTime.Now)
-                    {
-                        db.Weddings.Remove(wedding);
-                        db.SaveChanges();
-                    }
-                }
+                // foreach (Wedding wedding in wrapper.AllWeddings)
+                // {
+                //     if (wedding.Date <= DateTime.Now)
+                //     {
+                // db.Weddings.Remove(wedding);
+                db.Weddings.RemoveRange(db.Weddings.Where(w => w.Date >= DateTime.Now));
+                db.SaveChanges();
+                //     }
+                // }
                 return View("Dashboard", wrapper);
             }
             return RedirectToAction("Login", "Home");

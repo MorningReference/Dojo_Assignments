@@ -61,7 +61,7 @@ namespace CRUDelicious.Controllers
         }
 
         [HttpPost("dish/create")]
-        public IActionResult CreateDish(Dishes newDish)
+        public IActionResult CreateDish(IndexViewModel newDish)
         {
             // List<Chef> chefs = db.Chefs.ToList();
             // ViewBag.Chefs = chefs;
@@ -69,7 +69,7 @@ namespace CRUDelicious.Controllers
             WMod.AllChefs = db.Chefs.ToList();
             if (ModelState.IsValid)
             {
-                db.Add(newDish);
+                db.Add(newDish.Dish);
                 db.SaveChanges();
                 return RedirectToAction("Dishes");
             }

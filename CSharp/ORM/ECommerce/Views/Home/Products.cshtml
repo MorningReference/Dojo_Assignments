@@ -1,0 +1,45 @@
+@model ProductsViewModel
+
+< class="row">
+    <div class="col-2">
+        <form asp-action="search" asp-controller="Home" method="POST" class="form">
+            <input type="text">
+            <div class="text-right">
+                <button type="submit" class="btn btn-info">Filter</button>
+            </div>
+        </form>
+        <form asp-action="CreateProduct" asp-controller="Home" method="POST" class="form">
+            <h1>Add a new product</h1>
+            <div class="form-group">
+                <label asp-for="ProductToAdd.Name"></label>
+                <input asp-for="ProductToAdd.Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductToAdd.ImageUrl"></label>
+                <input asp-for="ProductToAdd.ImageUrl" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductToAdd.Description"></label>
+                <textarea asp-for="ProductToAdd.Description" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductToAdd.Quantity"></label>
+                <input asp-for="ProductToAdd.Quantity" class="form-control">
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-10 overflow-auto">
+        @foreach (Product product in Model.AllProducts)
+        {
+            <div class="text-center col">
+                <img src="@product.ImageUrl" alt="" class="img-thumbnail w-25">
+                <p>@product.Name</p>
+                <p>(@product.Quantity left)</p>
+            </div>
+        }
+    </div>
+    
+</div>

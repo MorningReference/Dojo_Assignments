@@ -1,0 +1,47 @@
+﻿@model DashboardViewModel
+
+<div class="row">
+    <div class="col-2">
+        <form asp-action="search" asp-controller="Home" method="POST" class="form">
+            <input type="text">
+            <div class="text-right">
+                <button type="submit" class="btn btn-info">Filter</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-10">
+        <div class="row">
+            @foreach (Product product in Model.AllProducts)
+            {
+                <div class="col">
+                    <img src="@product.ImageUrl" alt="">
+                    <p>@product.Name</p>
+                    <p>(@product.Quantity left)</p>
+                </div>
+            }
+            <div class="text-center">
+                <a href="/products">show more...</a>
+            </div>
+        </div>
+        <div class="orders">
+            <h3 class="">Recent Orders</h3>
+            @foreach (Order order in Model.RecentOrders)
+            {
+                <p>@order.Buyer.Name purchased @order.ItemBought.Quantity @order.ItemBought.Name...</p>
+            }
+            <div class="text-center">
+                <a href="/orders">show all orders...</a>
+            </div>
+        </div>
+        <div class="customers">
+            <h3>New Customers</h3>
+            @foreach (Customer customer in Model.NewCustomers)
+            {
+                <p>@customer.Name joined the store</p>
+            }
+            <div class="text-center">
+                <a href="/customers">show all customers...</a>
+            </div>
+        </div>
+    </div>
+</div>
