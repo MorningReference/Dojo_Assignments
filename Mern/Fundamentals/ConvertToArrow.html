@@ -55,7 +55,7 @@
       document.getElementById('color-changer').onclick = () =>
         setBackgroundColorById(
           'color-changer',
-          document.getElementById('color-changer-text').value
+          document.getValueById('color-changer-text')
         );
       function getValueFromId(id) {
         return document.getElementById(id).value;
