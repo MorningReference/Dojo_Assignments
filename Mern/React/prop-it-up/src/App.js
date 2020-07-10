@@ -9,25 +9,25 @@ function App() {
             <PersonCard
                 firstName="Jane"
                 lastName="Doe"
-                age="45"
+                age={45}
                 hairColor="Black"
             ></PersonCard>
             <PersonCard
                 firstName="John"
                 lastName="Smith"
-                age="88"
+                age={88}
                 hairColor="Brown"
             ></PersonCard>
             <PersonCard
                 firstName="Millard"
                 lastName="Fillmore"
-                age="50"
+                age={50}
                 hairColor="Brown"
             ></PersonCard>
             <PersonCard
                 firstName="Maria"
                 lastName="Smith"
-                age="62"
+                age={62}
                 hairColor="Brown"
             ></PersonCard>
         </div>
