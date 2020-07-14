@@ -1,0 +1,10 @@
+.tabContainer {
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px, solid, black;
+    cursor: pointer;
+}
+
+.contentContainer {
+    display: flex;
+}
