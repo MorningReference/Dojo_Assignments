@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './TodoList.module.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TodoList() {
     const [tasks, setTasks] = useState([]);
+    const [isCompleted, setIsCompleted] = useState(false);
     const [newTask, setNewTask] = useState('');
 
     function handleSubmit(event) {
@@ -15,7 +17,12 @@ function TodoList() {
         setNewTask('');
     }
 
-    function handleCompleted(index) {}
+    function handleCompleted(e) {
+        setIsCompleted(true);
+        e.target.parentElement.classList.toggle(styles.completed);
+        console.log(e.target);
+        console.log(isCompleted);
+    }
 
     function handleDelete(index) {
         setTasks(tasks.filter((_, idx) => idx !== index));
@@ -39,9 +46,12 @@ function TodoList() {
             </form>
             <div>
                 {tasks.map((task, idx) => (
-                    <div className={task} key={idx}>
-                        {task}
-                        <input type="radio" className="form-control"></input>
+                    <div className="" key={idx}>
+                        <span className="">{task}</span>
+                        <input
+                            type="checkbox"
+                            onChange={(e) => handleCompleted(e)}
+                        ></input>
                         <button
                             className="btn btn-dark"
                             onClick={() => handleDelete(idx)}
