@@ -15,18 +15,6 @@ function Products() {
             .catch(console.log);
     }, []);
 
-    const handleDelete = (delId) => {
-        axios
-            .delete('http://localhost:8000/api/products/' + delId)
-            .then((res) => {
-                const filteredProducts = allProducts.filter((product) => {
-                    return product._id !== delId;
-                });
-                setAllProducts(filteredProducts);
-            })
-            .catch(console.log);
-    };
-
     const removeFromDom = (delId) => {
         setAllProducts(allProducts.filter((product) => product._id !== delId));
     };
