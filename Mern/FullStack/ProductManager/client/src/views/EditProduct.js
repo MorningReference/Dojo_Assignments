@@ -1,32 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { navigate } from '@reach/router';
 
-function NewProduct() {
+function EditProduct(props) {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState(0.0);
     const [description, setDescription] = useState('');
 
+    useEffect(() => {
+        axios
+            .get('http://localhost:8000/api/products/' + props.id)
+            .then((res) => {
+                setTitle(res.data.title);
+                setPrice(res.data.price);
+                setDescription(res.data.description);
+            })
+            .catch(console.log);
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const newProduct = {
+        const editedProduct = {
             title,
             price,
             description,
         };
 
         axios
-            .post('http://localhost:8000/api/products/new', newProduct)
+            .put(
+                'http://localhost:8000/api/products/' + props.id,
+                editedProduct
+            )
             .then((res) => {
-                console.log(res);
-                navigate(`/${res.data._id}`);
-            });
+                console.log(props.id);
+                navigate(`/${props.id}`);
+            })
+            .catch(console.log);
     };
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-            <h1>Product Manager</h1>
+            <h1>{title}</h1>
             <label>Title: </label>
             <input
                 value={title}
@@ -47,9 +62,9 @@ function NewProduct() {
                 type="text"
                 onChange={(e) => setDescription(e.target.value)}
             />
-            <button type="submit">Create</button>
+            <button type="submit">Update</button>
         </form>
     );
 }
 
-export default NewProduct;
+export default EditProduct;

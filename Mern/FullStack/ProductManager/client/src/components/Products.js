@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 
 function Products() {
     const [allProducts, setAllProducts] = useState(null);
@@ -13,6 +13,19 @@ function Products() {
             })
             .catch(console.log);
     }, []);
+
+    const handleDelete = (delId) => {
+        axios
+            .delete('http://localhost:8000/api/products/' + delId)
+            .then((res) => {
+                const filteredProducts = allProducts.filter((product) => {
+                    return product._id !== delId;
+                });
+                setAllProducts(filteredProducts);
+            })
+            .catch(console.log);
+    };
+
     if (allProducts == null) {
         return <p>There are no products available to display!</p>;
     }
@@ -26,8 +39,14 @@ function Products() {
                         <Link to={product._id}>
                             <h3>{product.title}</h3>
                         </Link>
-                        {/* <p>Price: {product.price}</p>
-                        <p>Description: {product.description}</p> */}
+                        <button
+                            onClick={(e) => navigate(`/${product._id}/edit`)}
+                        >
+                            Edit
+                        </button>
+                        <button onClick={(e) => handleDelete(product._id)}>
+                            Delete
+                        </button>
                     </div>
                 );
             })}

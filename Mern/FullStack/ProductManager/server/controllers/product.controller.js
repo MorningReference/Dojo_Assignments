@@ -26,3 +26,26 @@ module.exports.findSingleProduct = (req, res) => {
             })
         );
 };
+
+module.exports.updateExistingProduct = (req, res) => {
+    Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
+        .then((updatedProduct) => res.json(updatedProduct))
+        .catch((err) => res.status(400).json(err));
+
+    // Product.findById(req.params.id)
+    //     .then((product) => {
+    //         product.updateOne(req.body).then((status) => res.json(status));
+    //     })
+    //     .catch((err) => res.json(err));
+};
+
+module.exports.deleteProduct = (req, res) => {
+    Product.findByIdAndDelete(req.params.id)
+        .then((productToDelete) => res.json(productToDelete))
+        .catch((err) =>
+            res.json({
+                message: 'The product to delete does not exist',
+                error: err,
+            })
+        );
+};
