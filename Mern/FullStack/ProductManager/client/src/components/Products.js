@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, navigate } from '@reach/router';
+import DeleteButton from '../components/DeleteButton';
 
 function Products() {
     const [allProducts, setAllProducts] = useState(null);
@@ -26,6 +27,10 @@ function Products() {
             .catch(console.log);
     };
 
+    const removeFromDom = (delId) => {
+        setAllProducts(allProducts.filter((product) => product._id !== delId));
+    };
+
     if (allProducts == null) {
         return <p>There are no products available to display!</p>;
     }
@@ -44,9 +49,10 @@ function Products() {
                         >
                             Edit
                         </button>
-                        <button onClick={(e) => handleDelete(product._id)}>
-                            Delete
-                        </button>
+                        <DeleteButton
+                            productId={product._id}
+                            successCallback={() => removeFromDom(product._id)}
+                        />
                     </div>
                 );
             })}
