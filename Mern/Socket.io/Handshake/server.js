@@ -17,12 +17,20 @@ const server = app.listen(port, () => {
 
 const io = require('socket.io')(server);
 let connectedClients = 0;
+let name = '';
+let message = [];
 
 io.on('connection', (socket) => {
     console.log('Nice to meet you. (shake hand)');
     connectedClients++;
     console.log(`We have ${connectedClients} clients connected!`);
-    socket.emit('welcome', 'Thanks for coming');
+    socket.emit('new_message_from_server', name, message);
+
+    socket.on('new_message_from_client', (userName, newMessage) => {
+        name = userName;
+        message.push(newMessage);
+        io.emit('new_message_from_server', name, message);
+    });
 
     // socket.on('Welcome', (data) => {
     //     console.log('Welcome!!');
